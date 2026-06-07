@@ -58,3 +58,38 @@ resultMessageEl.className = "result-message";
 
 
 
+if (result === 'win') {
+  playerScore++;
+  playerScoreEl.textContent = playerScore;
+  resultMessageEl.textContent = '🎉 You Win!';
+  resultMessageEl.classList.add('win');
+} else if (result === 'lose') {
+  computerScore++;
+  computerScoreEl.textContent = computerScore;
+  resultMessageEl.textContent = '😢 You Lose!';
+  resultMessageEl.classList.add('lose');
+} else {
+  drawScore++;
+  drawScoreEl.textContent = drawScore;
+  resultMessageEl.textContent = "🤝 It's a Draw!";
+  resultMessageEl.classList.add('draw');
+}
+
+
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  drawScore = 0;
+
+  playerScoreEl.textContent = '0';
+  computerScoreEl.textContent = '0';
+  drawScoreEl.textContent = '0';
+
+  playerChoiceEl.textContent = '❓';
+  computerChoiceEl.textContent = '❓';
+
+  resultMessageEl.className = 'result-message';
+  resultMessageEl.textContent = 'Make your move!';
+}
+
+
