@@ -3,16 +3,72 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+  <div class="game-wrapper">
 
+    <h1 class="title">Rock Paper Scissors</h1>
 
+    <!-- SCOREBOARD -->
+    <div class="scoreboard">
+      <div class="score-box player-score">
+        <span class="score-label">You</span>
+        <span class="score-value" id="player-score">0</span>
+      </div>
+      <div class="score-box draw-score">
+        <span class="score-label">Draw</span>
+        <span class="score-value" id="draw-score">0</span>
+      </div>
+      <div class="score-box computer-score">
+        <span class="score-label">CPU</span>
+        <span class="score-value" id="computer-score">0</span>
+      </div>
+    </div>
+
+    <!-- RESULT DISPLAY -->
+    <div class="result-area">
+      <div class="choice-display">
+        <p class="choice-label">You chose</p>
+        <div class="choice-icon" id="player-choice">❓</div>
+      </div>
+      <div class="vs-badge">VS</div>
+      <div class="choice-display">
+        <p class="choice-label">CPU chose</p>
+        <div class="choice-icon" id="computer-choice">❓</div>
+      </div>
+    </div>
+
+    <!-- RESULT MESSAGE -->
+    <div class="result-message" id="result-message">Make your move!</div>
+
+    <!-- BUTTONS -->
+    <div class="btn-container">
+      <button class="choice-btn" id="rock" onclick="playGame('rock')">
+        <span class="btn-emoji">🪨</span>
+        <span class="btn-label">Rock</span>
+      </button>
+      <button class="choice-btn" id="paper" onclick="playGame('paper')">
+        <span class="btn-emoji">📄</span>
+        <span class="btn-label">Paper</span>
+      </button>
+      <button class="choice-btn" id="scissors" onclick="playGame('scissors')">
+        <span class="btn-emoji">✂️</span>
+        <span class="btn-label">Scissors</span>
+      </button>
+    </div>
+
+    <!-- RESET -->
+    <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+
+  </div>
 
   <script src="js/app.js"></script>
 </body>
