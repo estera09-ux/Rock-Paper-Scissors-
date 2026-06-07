@@ -42,6 +42,7 @@ function animateChoice(element) {
   element.classList.add('bounce');
 }
 
+
 function playGame(playerChoice) {
   const computerChoice = getComputerChoice();
   const result = getWinner(playerChoice, computerChoice);
@@ -52,27 +53,24 @@ function playGame(playerChoice) {
   animateChoice(playerChoiceEl);
   animateChoice(computerChoiceEl);
 
+  resultMessageEl.className = 'result-message';
 
-}
-resultMessageEl.className = "result-message";
-
-
-
-if (result === 'win') {
-  playerScore++;
-  playerScoreEl.textContent = playerScore;
-  resultMessageEl.textContent = '🎉 You Win!';
-  resultMessageEl.classList.add('win');
-} else if (result === 'lose') {
-  computerScore++;
-  computerScoreEl.textContent = computerScore;
-  resultMessageEl.textContent = '😢 You Lose!';
-  resultMessageEl.classList.add('lose');
-} else {
-  drawScore++;
-  drawScoreEl.textContent = drawScore;
-  resultMessageEl.textContent = "🤝 It's a Draw!";
-  resultMessageEl.classList.add('draw');
+  if (result === 'win') {
+    playerScore++;
+    playerScoreEl.textContent = playerScore;
+    resultMessageEl.textContent = '🎉 You Win!';
+    resultMessageEl.classList.add('win');
+  } else if (result === 'lose') {
+    computerScore++;
+    computerScoreEl.textContent = computerScore;
+    resultMessageEl.textContent = '😢 You Lose!';
+    resultMessageEl.classList.add('lose');
+  } else {
+    drawScore++;
+    drawScoreEl.textContent = drawScore;
+    resultMessageEl.textContent = "🤝 It's a Draw!";
+    resultMessageEl.classList.add('draw');
+  }
 }
 
 
