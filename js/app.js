@@ -34,3 +34,27 @@ function getWinner(player, computer) {
   }
   return 'lose';
 }
+
+
+function animateChoice(element) {
+  element.classList.remove('bounce');
+  void element.offsetWidth;
+  element.classList.add('bounce');
+}
+
+function playGame(playerChoice) {
+  const computerChoice = getComputerChoice();
+  const result = getWinner(playerChoice, computerChoice);
+
+  playerChoiceEl.textContent = emojis[playerChoice];
+  computerChoiceEl.textContent = emojis[computerChoice];
+
+  animateChoice(playerChoiceEl);
+  animateChoice(computerChoiceEl);
+
+
+}
+resultMessageEl.className = "result-message";
+
+
+
