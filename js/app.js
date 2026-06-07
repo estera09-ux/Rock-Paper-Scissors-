@@ -16,3 +16,21 @@ const emojis = {
   paper: '📄',
   scissors: '✂️'
 };
+
+
+function getComputerChoice() {
+  const randomIndex = Math.floor(Math.random() * choices.length);
+  return choices[randomIndex];
+}
+
+function getWinner(player, computer) {
+  if (player === computer) return 'draw';
+  if (
+    (player === 'rock' && computer === 'scissors') ||
+    (player === 'paper' && computer === 'rock') ||
+    (player === 'scissors' && computer === 'paper')
+  ) {
+    return 'win';
+  }
+  return 'lose';
+}
