@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9c74f 0%, #f8961e 30%, #f3722c 60%, #f94144 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  padding: 20px;
+}
+
+.game-wrapper {
+  background: white;
+  border-radius: 32px;
+  padding: 40px 36px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* TITLE */
+.title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 36px;
+  color: #f3722c;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+}
+
+/* SCOREBOARD */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 16px;
+  min-width: 90px;
+}
+
+.player-score {
+  background: #4cc9f0;
+}
+
+.draw-score {
+  background: #adb5bd;
+}
+
+.computer-score {
+  background: #f94144;
+}
+
+.score-label {
+  font-size: 13px;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.score-value {
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  color: white;
+  line-height: 1.1;
+}
+
+/* RESULT AREA */
+.result-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.choice-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.choice-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #adb5bd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.choice-icon {
+  font-size: 52px;
+  width: 90px;
+  height: 90px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.choice-icon.bounce {
+  animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.3);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.vs-badge {
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  color: #dee2e6;
+  padding: 8px 12px;
+}
+
+/* RESULT MESSAGE */
+.result-message {
+  font-family: 'Fredoka One', cursive;
+  font-size: 26px;
+  margin-bottom: 28px;
+  color: #495057;
+  min-height: 36px;
+  transition: color 0.3s ease;
+}
+
+.result-message.win {
+  color: #4cc9f0;
+}
+
+.result-message.lose {
+  color: #f94144;
+}
+
+.result-message.draw {
+  color: #f8961e;
+}
+
+/* BUTTONS */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.choice-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 20px;
+  border: 3px solid transparent;
+  border-radius: 20px;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  min-width: 100px;
+}
+
+.choice-btn:hover {
+  transform: translateY(-4px);
+  background: #fff3e0;
+  border-color: #f8961e;
+  box-shadow: 0 8px 24px rgba(248, 150, 30, 0.3);
+}
+
+.choice-btn:active {
+  transform: translateY(0);
+}
+
+.btn-emoji {
+  font-size: 36px;
+}
+
+.btn-label {
+  font-family: 'Fredoka One', cursive;
+  font-size: 16px;
+  color: #495057;
+}
+
+/* RESET BUTTON */
+.reset-btn {
+  font-family: 'Fredoka One', cursive;
+  font-size: 18px;
+  padding: 12px 32px;
+  background: #f94144;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(249, 65, 68, 0.4);
+}
+
+.reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(249, 65, 68, 0.5);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .game-wrapper {
+    padding: 28px 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .choice-icon {
+    font-size: 40px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .score-box {
+    padding: 10px 16px;
+    min-width: 75px;
+  }
+
+  .score-value {
+    font-size: 32px;
+  }
+
+  .choice-btn {
+    min-width: 85px;
+    padding: 12px 14px;
+  }
+
+  .btn-emoji {
+    font-size: 30px;
+  }
+}
